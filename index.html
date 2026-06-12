@@ -232,17 +232,6 @@
   }
   .leaf-card.in{ opacity:1; transform:translateY(0); }
 
-  /* animated border glow on leaf cards */
-  .leaf-card > .card-border-glow{
-    content:'';
-    position:absolute; inset:-2px;
-    border-radius:28px;
-    background:linear-gradient(135deg, var(--gold), var(--accent), #f0a8b8, var(--gold));
-    background-size:300% 300%;
-    z-index:-1;
-    animation:borderGlow 6s ease infinite;
-  }
-
   /* hover shimmer */
   .leaf-card::after{
     content:'';
@@ -358,14 +347,6 @@
     50%{background-position:100% 50%;}
   }
 
-  /* starfield inside dedicatoria */
-  .ded-stars{
-    position:absolute; inset:0;
-    border-radius:28px;
-    overflow:hidden;
-    pointer-events:none;
-  }
-
   .ded-label{
     font-family:'Cinzel', serif;
     font-size:.7rem;
@@ -453,6 +434,38 @@
     50%{transform:translateY(-12px) scale(1.15);}
   }
 
+  /* ---------- FOTO NOSOTROS ---------- */
+  .ded-photo-wrap{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin:36px 0 32px;
+  }
+  .ded-photo{
+    width:260px;
+    height:260px;
+    object-fit:cover;
+    border-radius:50%;
+    border:3px solid rgba(207,174,107,.6);
+    box-shadow:
+      0 0 0 6px rgba(207,174,107,.15),
+      0 0 30px rgba(201,123,138,.4),
+      0 12px 40px rgba(0,0,0,.35);
+    animation:photoFloat 5s ease-in-out infinite;
+  }
+  @keyframes photoFloat{
+    0%,100%{ transform:translateY(0) scale(1); }
+    50%{ transform:translateY(-8px) scale(1.02); }
+  }
+  .ded-photo-caption{
+    font-family:'Dancing Script', cursive;
+    font-size:1.6rem;
+    color:var(--gold-light);
+    margin-top:18px;
+    text-shadow:0 0 20px rgba(207,174,107,.5);
+    letter-spacing:1px;
+  }
+
   .ded-signature{
     text-align:center;
     margin-top:36px;
@@ -526,6 +539,7 @@
     .splash-card{ padding:42px 28px; }
     .ded-title{ font-size:1.9rem; }
     .ded-body{ font-size:1.1rem; }
+    .ded-photo{ width:200px; height:200px; }
   }
 </style>
 </head>
@@ -655,7 +669,7 @@
     <div class="chapter-title">Gracias por ser tú</div>
     <div class="flower-row">🌸 🌼 🌷 🌻 🌺</div>
     <p>Gracias por llenar mi vida de cosas pequeñas que se sienten enormes. Por tu forma de ser, por tu manera de cuidar, por simplemente existir como existes.</p>
-    <p>Eres mi lugar favorito para volver, mi persona favorita para todo. Te quiero muchoo mi princesita linda, mi corazón que tanto adoro,mis ojitos que son todo para mí</p>
+    <p>Eres mi lugar favorito para volver, mi persona favorita para todo. Te quiero muchoo mi princesita linda, mi corazón que tanto adoro, mis ojitos que son todo para mí.</p>
     <p>Espero seguir creciendo a tu lado por mucho tiempo más.</p>
     <div class="signature">— Fer 🌿</div>
   </div>
@@ -689,9 +703,9 @@
         Porque el amor que construimos no vive en un lugar,<br>
         vive en cada <span class="highlight">mensaje que se envía sin pensarlo</span>,<br>
         en cada <span class="highlight-pink">sonrisa que aparece sola al recordarte</span>,<br>
-        en cada noche que termina con tu nombre en mis pensamientos.
-        En cada <span class="highlight-pink">Te quiero</span>,<br> y en cada
-         <span class="highlight-pink">Te extraño </span>,<br>
+        en cada noche que termina con tu nombre en mis pensamientos.<br>
+        En cada <span class="highlight-pink">Te quiero</span>, y en cada
+        <span class="highlight-pink">Te extraño</span>.
       </p>
 
       <p class="ded-body">
@@ -720,8 +734,14 @@
         <div class="ded-divider-line r"></div>
       </div>
 
+      <!-- FOTO NOSOTROS -->
+      <div class="ded-photo-wrap">
+        <img src="US.jpg" alt="Nosotros" class="ded-photo">
+        <span class="ded-photo-caption">siempre nosotros 🌿</span>
+      </div>
+
       <div class="ded-signature">
-        <span class="name">Con todo mi amor,Tu latoso Fer</span>
+        <span class="name">Con todo mi amor, Tu latoso Fer</span>
         <span class="date">✦ Para siempre tuyo. ✦</span>
       </div>
     </div>
